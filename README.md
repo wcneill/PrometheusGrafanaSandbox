@@ -6,8 +6,8 @@ This repo contains a single, simple python module. This module contains a single
 
 The metrics being exposed to the Prometheus server are:
 - `current_sea_level`: A Prometheus `Gauge` style metric.
--`current_tide_direction`: Also a `Gauge` metric, but with 4 possible discrete values. `{Low: -2, Outgoing: -1, Incoming: 1, High: 2}`
--`latency_histogram`: A Prometheus `Histogram` style metric, that measures the latency of each tide measurement (simulated by `time.sleep(random.randomnormal(.3, .1))`).
+- `current_tide_direction`: Also a `Gauge` metric, but with 4 possible discrete values. `{Low: -2, Outgoing: -1, Incoming: 1, High: 2}`
+- `latency_histogram`: A Prometheus `Histogram` style metric, that measures the latency of each tide measurement (simulated by `time.sleep(random.randomnormal(.3, .1))`).
 
 ## Instructions
 Instructions to get started.
