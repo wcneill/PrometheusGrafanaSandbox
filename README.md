@@ -1,10 +1,13 @@
 # Prometheus - Grafana Sandbox
 
-A toy example that illustrates how to get Prometheus up and running using a slightly less trivial example than what is available in the current documentation. It includes setting up Grafana to query a Prometheus server instance for more advanced visualizations and dashboard creation. 
+A sample `Python -> Prometheus -> Grafana` pipeline that includes integration of Slack alerts via webhooks. 
 
-It also includes a configuration to send alerts to a Slack channel via webhooks. 
+This repo contains a single, simple python module. This module contains a single function designed to imitate a stream of sensor data measuring tides and/or sea level with some gaussian latency. 
 
-This repo contains a single, simple python module. This module contains a single function designed to imitate a stream of sensor data measuring tides and/or sea level. 
+The metrics being exposed to the Prometheus server are:
+- `current_sea_level`: A Prometheus `Gauge` style metric.
+-`current_tide_direction`: Also a `Gauge` metric, but with 4 possible discrete values. `{Low: -2, Outgoing: -1, Incoming: 1, High: 2}`
+-`latency_histogram`: A Prometheus `Histogram` style metric, that measures the latency of each tide measurement (simulated by `time.sleep(random.randomnormal(.3, .1))`).
 
 ## Instructions
 Instructions to get started.
