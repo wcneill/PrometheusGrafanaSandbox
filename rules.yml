@@ -1,0 +1,16 @@
+groups:
+- name: TideAlerts
+  rules:
+  - alert: ExtremeHighTide
+    # Condition for alerting
+    expr: avg_over_time(current_sea_level [5s]) > 4
+    for: 0s
+    
+    # Annotation - additional informational labels to store more information
+    annotations:
+      title: 'Extreme High Tide'
+      description: 'Alert: Current sea level has greatly exceeded mean high tide'
+
+    # Labels - additional labels to be attached to the alert
+    labels:
+      severity: 'critical'
